@@ -1,0 +1,51 @@
+MODELS/DB FIELDS
+
+## LISTING - property listing table
+    (Each realtors are assigned to group of listings)
+    - id: INT
+    - realtor: INT (FOREIGN KEY [relator table])
+    - title: STR
+    - address: STR
+    - city: STR
+    - zipcode: STR
+    - description: TEXTFIELD
+    - price: INT
+    - bedrooms: INT
+    - bathrooms: INT
+    - garage:INT [default: 0]
+    - sqft: INT
+    - lot_size: FLOAT
+    - is_published: BOOL [default:true]
+    - list_date: DATE
+    - photo_main: STR (location of img src)
+    - photo_1: STR
+    - photo_2: STR
+    - photo_3: STR
+    - photo_4: STR
+    - photo_5: STR
+    - photo_6: STR
+    
+
+
+## REALTORS - realtors info table  
+    - id: INT
+    - name: STR
+    - photo: STR
+    - description: TEXTFIELD
+    - email: STR
+    - phone: STR
+    - is_mvp: BOOL [default: 0]
+    - hire_date: DATE
+
+
+## CONTACT - inquiry made to app for listing
+    - id: INT
+    - user_id: INT
+    - listing: INT
+    - listing_id: INT
+    - name: STR
+    - email: STR
+    - phone: STR
+    - message: TEXT
+    - contact_date: DATE
+

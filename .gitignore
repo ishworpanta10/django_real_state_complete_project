@@ -1,0 +1,10 @@
+.vscode
+*.log
+*.pyc
+__pycache__/
+local_settings.pyc
+db.sqlite3
+/media
+venv
+/static
+/Real_Estate_Project/__pycache__
