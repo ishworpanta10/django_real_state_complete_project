@@ -1,0 +1,1 @@
+# django_real_state_complete_project
