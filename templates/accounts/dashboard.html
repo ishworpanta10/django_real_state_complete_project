@@ -27,9 +27,7 @@
     </div>
 </section>
 
-<div class="mx-5 mx-auto">
-    {% include 'partials/_alerts.html' %}
-</div>
+
 
 <!-- Alert Mesg -->
 {% include 'partials/_alerts.html' %}
@@ -38,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Welcome m{{ user.first_name }} </h2>
+                <h2>Welcome {{ user.first_name }} </h2>
                 {% if contacts %}
                 <p>Here are the property listings that you have inquired about</p>
                 <table class="table">
