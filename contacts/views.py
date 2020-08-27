@@ -14,6 +14,19 @@ def contact(request):
         user_id = request.POST['user_id']
         realtor_email = request.POST['realtor_email']
 
+        # Checking if user has already made that enquiry
+        if request.user.is_authenticated:
+            user_id = request.user.id
+            has_contacted = Contact.objects.all().filter(
+                listing_id=listing_id, user_id=user_id)
+
+            if has_contacted:
+                messages.error(
+                    request, 'You had already made an inquiry for this listing')
+                return redirect('/listings/'+listing_id)
+
+        # Saving contact inquiry to db
+
         contact = Contact(
             listing=listing, listing_id=listing_id, name=name, email=email, phone=phone, message=message, user_id=user_id)
 
